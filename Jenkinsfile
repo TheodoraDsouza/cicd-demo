@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        registry = "yourdockerhubusername/cicd-demo"
+        registry = "theodora19/cicd-demo"
         registryCredential = 'dockerhub'
         dockerImage = ''
         DOCKER_HOST = 'tcp://localhost:2375'
@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Cloning Git') {
             steps {
-                git 'https://github.com/TheodoraDsouza/cicd-demo.git'
+                git 'git branch: 'main', url: 'https://github.com/TheodoraDsouza/cicd-demo.git''
             }
         }
         stage('Building Docker Image') {
